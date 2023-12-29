@@ -1,0 +1,25 @@
+<%- include("./_head.ejs") %>
+    <header class="flex">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Products</a></li>
+            </ul>
+        </nav>
+
+        <!-- <img src="images/geegstack-standalone.png" alt="Geegstack Logo" id="logo"> -->
+        <h3 class="title">Geegstack Store</h3>
+
+        <!-- <img src="../images/search-icon.svg" alt="Search" id="search-icon"> -->
+        <% if(adminSession) {%>
+            <a href="/admin/profile">
+                <button class="price">Profile</button>
+            </a>
+
+        <%} else {%>
+            <a href="/admin/login">
+                <button class="price">Log-In</button>
+            </a>
+        <%}%>
+       
+    </header>

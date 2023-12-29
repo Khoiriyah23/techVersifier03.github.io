@@ -1,0 +1,22 @@
+<%- include("./layout/header.ejs") %>
+    <main class="product-details">
+        <img src="<%= product.imageURL %>" alt="Product"/>
+         <h2 class="name"><%= product.name %></h2>
+        <p class="price">NGN<%= product.price %></p>
+        <p class="desc"><%= product.description %></p>
+        <p class="category"><%= product.category.slice(0,1).toUpperCase()+product.category.slice(1) %></p>
+        
+        <% if(adminSession && adminSession === product.admin.toString()) { %>
+            <a href="/products/<%= product._id %>/edit">Edit Product</a>
+                    <form 
+                    action="/products/<%= product._id %>?_method=DELETE" 
+                    method="post"
+                    onsubmit="return confirm('Are you Sure you want to delete the product?')"
+                    >
+                        <button type="submit">Delete Product</button>
+                    </form>
+        <% } %>
+   
+       
+    </main>
+ <%- include("./layout/footer.ejs") %>

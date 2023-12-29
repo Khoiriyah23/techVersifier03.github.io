@@ -1,0 +1,20 @@
+<%- include("./layout/header.ejs") %>
+    <main class="products">
+        <% products.forEach(function(product,index) { %>
+            <article class="product">
+                        <img src="<%= product.imageURL %>" alt="product">
+                        <h3 ><%= product.name %></h3>
+                        <div class="flex">
+                            <p class="price"><%= product.price %></p>
+                            <% if (product.category) { %>
+                                <p class="category"><%= product.category.charAt(0).toUpperCase() + product.category.slice(1) %></p>
+                            <% } else { %>
+                                <p class="category">Category Not Defined</p>
+                            <% } %>
+                        </div>
+                        <a href="/products/<%= product._id %>">View product</a>
+                    </article>
+      <%  })%> 
+     
+    </main>
+    <%- include("./layout/footer.ejs") %>

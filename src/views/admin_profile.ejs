@@ -1,0 +1,35 @@
+<%- include("./layout/header.ejs") %>
+    <main class="product-details">
+         <h2>Wslcome Back, <%= profile.firstName %> <%= profile.lastName %>.</h2>
+        
+         <div>
+            <a href="/products/new">
+                <button class="price">Add Product</button>
+            </a>
+            <form action="/admin/logout" method="post" onsubmit="return
+             confirm('Are you sure you want to logout?')">
+                <button type="submit">logout</button>
+            </form>       
+        </div>
+        <hr>
+        <h2>My products</h2>
+        <section>
+            <% products.forEach(function(product,index) { %>
+                <article class="product">
+                            <img src="<%= product.imageURL %>" alt="product">
+                            <h3 ><%= product.name %></h3>
+                            <div class="flex">
+                                <p class="price"><%= product.price %></p>
+                                <% if (product.category) { %>
+                                    <p class="category"><%= product.category.charAt(0).toUpperCase() + product.category.slice(1) %></p>
+                                <% } else { %>
+                                    <p class="category">Category Not Defined</p>
+                                <% } %>
+                            </div>
+                            <a href="/products/<%= product._id %>">View product</a>
+                        </article>
+          <%  })%> 
+         
+        </section>
+    </main>
+ <%- include("./layout/footer.ejs") %>

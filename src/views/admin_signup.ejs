@@ -1,0 +1,41 @@
+<%- include("./layout/header.ejs") %>
+        <main class="product-details">
+            <h2>Admin Sign-up</h2>
+             <p class="error"><%= error %> </p>
+
+            <div>
+                <form action="/admin/signup" method="POST">
+                    <div>
+                        <label for="fname">
+                            <p>First Name</p>
+                        </label>
+                        <input type="text" name="fname" id="fname" value="<%= form[0]?.fname %>">
+                    </div>
+                    <div>
+                        <label for="lname">
+                            <p>Last Name</p>
+                        </label>
+                        <input type="text" name="lname" id="lname" value="<%= form[0]?.lname %>">
+                    </div>
+                    
+                    <div>
+                        <label for="email">
+                            <p>Email Address</p>
+                        </label>
+                        <input type="email" name="email" id="email" value="<%= form[0]?.email %>">
+                    </div>
+                    
+                    <div>
+                        <label for="password">
+                            <p>Password</p>
+                        </label>
+                        <input type="password" name="password" id="password" value="">
+                    </div>
+
+                    <input type="submit" value="Create Account">
+
+                </form>
+
+            </div>
+        </main>     
+<%- include("./layout/footer.ejs") %>

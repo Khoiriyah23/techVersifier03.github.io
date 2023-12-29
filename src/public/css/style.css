@@ -1,0 +1,203 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+h1, h2, h3 {
+    font-family: 'DM Serif Display', serif;
+}
+p,a {
+    font-family: 'Karla', sans-serif;
+}
+.flex {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+}
+
+/* header  */
+header {
+    background-color: #fff;
+    justify-content: space-between;
+    padding: 20px 5%;
+}
+nav ul {
+    list-style-type: none;
+}
+nav li {
+    float: left;
+}
+nav li a {
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+    margin-left: 0px;
+    color: #134544;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+header #logo {
+    max-width: 60px;
+}
+header #search-icon {
+    width: 30px;
+}
+.title {
+    font-size: 1.5rem;
+    color: #134544;
+    text-align: center;
+}
+main.home {
+    min-height: calc(150vh - 40px);
+    background-color: #134544;
+    padding-top: 50px;
+}
+main.home > section {
+    width: 85%;
+    margin: auto;
+}
+main.home > section div,
+main > section > img {
+    width: 50%;
+}
+main > section > img {
+    max-width: 450px;
+}
+main.home > section div {
+    color: #fff;
+}
+main > section div > p.big {
+    font-size: 4rem;
+    font-family: 'DM Serif Display', serif;
+}
+main.home > section div > p:first-child {
+    font-size: 1.5rem;
+}
+main.home > section div > p:last-child {
+    font-size: 1.2rem;
+}
+a.explore-btn {
+    display: inline-block;
+    margin: 20px 0px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3rem;
+    background-color: #28918a;
+    color: #134544;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+a.explore-btn:hover {
+    background-color: #2bb7ae;
+}
+
+main.products {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: #134544;
+    min-height: calc(100vh - 150px);
+}
+article.product {
+    width: 24%;
+    max-width: 300px;
+    min-width: 200px;
+    background-color: #eeeaea;
+    padding: 10px;
+    margin: 10px 0px;
+}
+article.product > img {
+    width: 100%;
+}
+article.product .flex {
+    justify-content: space-between;
+}
+article.product .price::before {
+    content: "NGN";
+}
+article.product .title {
+    color: #134544;
+}
+article.product a {
+    color: #134544;
+
+}
+ .price {
+    background-color: #134544;
+    color: #fff;
+    padding: 7px 10px;
+    margin: 10px 0px;
+    max-width: 120px;
+    text-align: center;
+    cursor: pointer;
+}
+
+main.product-details {
+    border-top: 2px solid #134544;
+    padding: 20px;
+}
+main.product-details > img {
+    max-width: 500px;
+}
+.desc {
+    padding: 15px 0px;
+}
+footer {
+    padding: 20px;
+    border-top: 2px solid #134544;
+    text-align: center;
+}
+
+
+.form-container {
+    margin-top: 25px;
+    width: 90%;
+    max-width: 300px;
+}
+form > div {
+    margin: 10px 0px;
+}
+form input, form textarea, form select {
+    width: 30%;
+    padding: 7px;
+    border-radius: 2px;
+    border: 1px solid #134544;
+}
+form input[type=submit] {
+    background-color: #134544;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 15px;
+    padding: 10px;
+}
+.error {
+    color: red;
+}
+hr{
+    margin: 20px 0px;
+}
+@media screen and (max-width: 550px) {
+    main.product-details > img {
+        width: 80%;
+    }
+    main.products{
+        justify-content: center;
+    }
+    article.product {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    main > section {
+        width: 90%;
+        flex-direction: column;
+        text-align: center;
+    }
+    main > section div,
+    main > section > img {
+    width: 90%;
+}
+}
